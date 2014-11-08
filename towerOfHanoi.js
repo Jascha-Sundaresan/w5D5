@@ -55,8 +55,10 @@ function HanoiGame() {
       });      
     });    
   };
-  
-  this.run = function(completionCallback) {
+
+}
+
+HanoiGame.prototype.run = function(completionCallback) {
     var fn = this;
     this.promptMove(function(startTowerIdx, endTowerIdx) {
       if (fn.move(startTowerIdx, endTowerIdx) === false) {
@@ -71,7 +73,6 @@ function HanoiGame() {
     });
     
   };  
-}
 
 var game = new HanoiGame();
 game.run(function() {
